@@ -1,0 +1,5 @@
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
+    - csstools.postcss
+    - clinyong.vscode-css-modules

@@ -3,3 +3,5 @@ vscode:
     - dbaeumer.vscode-eslint
     - csstools.postcss
     - clinyong.vscode-css-modules
+    - esbenp.prettier-vscode
+    - bradlc.vscode-tailwindcss

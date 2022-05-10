@@ -22,7 +22,8 @@
     "**/*.tsbuildinfo": true
   },
   "emmet.includeLanguages": {
-    "postcss": "css"
+    "postcss": "css",
+    "typescriptreact": "javascriptreact"
   },
   "javascript.suggest.paths": false,
   "typescript.suggest.paths": false

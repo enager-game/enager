@@ -4,6 +4,7 @@
     "clinyong.vscode-css-modules",
     "csstools.postcss",
     "dbaeumer.vscode-eslint",
-    "bradlc.vscode-tailwindcss"
+    "bradlc.vscode-tailwindcss",
+    "christian-kohler.path-intellisense"
   ]
 }

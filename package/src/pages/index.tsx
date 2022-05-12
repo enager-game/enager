@@ -1,5 +1,5 @@
 import { IconCurrencyDollar, IconDeviceFloppy } from "@tabler/icons";
-import { openDB, DBSchema } from "idb";
+import { openDB, DBSchema, IDBPDatabase } from "idb";
 import { atom, useAtom } from "jotai";
 
 const moneyStore = atom(0),
@@ -8,25 +8,25 @@ const moneyStore = atom(0),
     (get, set) => set(moneyStore, get(moneyStore) + 1),
   );
 
-const db = await (() => {
-  interface money_test extends DBSchema {
-    richness: {
-      key: string;
-      value: number;
-    };
-  }
-
-  return openDB<money_test>("money_test", 1, {
+interface money_test extends DBSchema {
+  richness: {
+    key: string;
+    value: number;
+  };
+}
+let db: IDBPDatabase<money_test>;
+if (typeof window !== "undefined") {
+  db = await openDB<money_test>("money_test", 2, {
     upgrade(newDB) {
-      newDB.createObjectStore("richness", {
-        keyPath: "da_moni",
-      });
+      newDB.deleteObjectStore("richness");
+      newDB.createObjectStore("richness");
     },
   });
-})();
+}
 
 async function saveMoney(money: number) {
   await db.put("richness", money, "da_moni");
+  console.log(1);
 }
 
 export default function Index() {

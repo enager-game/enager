@@ -5,3 +5,4 @@ vscode:
     - clinyong.vscode-css-modules
     - esbenp.prettier-vscode
     - bradlc.vscode-tailwindcss
+    - christian-kohler.path-intellisense

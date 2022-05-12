@@ -5,7 +5,8 @@
 - JavaScript
   - React
     - Next.js
-    - React Redux
+    - Jotai
+  - IDB
 - PostCSS
   - Tailwind CSS
-- Font Awesome
+- Tabler Icons

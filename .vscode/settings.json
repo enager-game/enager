@@ -3,23 +3,13 @@
     "*.css": "postcss"
   },
   "files.exclude": {
-    "node_modules": true,
-    ".pnp": true,
-    "**/.pnp.js": true,
-    "coverage": true,
-    ".next/": true,
-    "out/": true,
-    "build": true,
-    "**/.DS_Store": true,
-    "**/*.pem": true,
+    "package/node_modules/": true,
+    "package/.next/": true,
+    "/build": true,
+    ".DS_Store": true,
     "**/*.log": true,
-    "**/npm-debug.log*": true,
-    "**/yarn-debug.log*": true,
-    "**/yarn-error.log*": true,
-    "**/.pnpm-debug.log*": true,
-    "**/.env*.local": true,
-    "**/.vercel": true,
-    "**/*.tsbuildinfo": true
+    ".env*.local": true,
+    "*.tsbuildinfo": true
   },
   "emmet.includeLanguages": {
     "postcss": "css",

@@ -1,12 +1,13 @@
 import { DBSchema } from "idb";
 
 export interface Save {
-  key: string;
-  value: number;
+  money: number;
+  name: string;
 }
 
 export default interface GameDatabase extends DBSchema {
-  save1: Save;
-  save2: Save;
-  save3: Save;
+  saves: {
+    key: Save["name"];
+    value: Save;
+  };
 }

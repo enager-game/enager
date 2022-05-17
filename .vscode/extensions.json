@@ -5,6 +5,7 @@
     "csstools.postcss",
     "dbaeumer.vscode-eslint",
     "bradlc.vscode-tailwindcss",
-    "christian-kohler.path-intellisense"
+    "christian-kohler.path-intellisense",
+    "mikestead.dotenv"
   ]
 }

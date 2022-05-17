@@ -6,3 +6,15 @@ vscode:
     - esbenp.prettier-vscode
     - bradlc.vscode-tailwindcss
     - christian-kohler.path-intellisense
+    - mikestead.dotenv
+tasks:
+  - name: Install Dependencies
+    init: |
+      npm install --prefix /workspace/enager/package
+      pip install plumbum
+      gp sync-done dep_installed
+  - name: Start Dev Server
+    init: |
+      gp sync-await dep_installed
+    command: |
+      python scripts/run

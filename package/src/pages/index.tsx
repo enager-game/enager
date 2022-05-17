@@ -1,6 +1,8 @@
 import { IconCurrencyDollar, IconDeviceFloppy } from "@tabler/icons";
-import { openDB, DBSchema, IDBPDatabase } from "idb";
+import getDB from "../database";
 import { atom, useAtom } from "jotai";
+import { useAtomDevtools } from "jotai/devtools";
+import { useEffect } from "react";
 
 const moneyStore = atom(0),
   moneyRW = atom(
@@ -8,29 +10,16 @@ const moneyStore = atom(0),
     (get, set) => set(moneyStore, get(moneyStore) + 1),
   );
 
-interface money_test extends DBSchema {
-  richness: {
-    key: string;
-    value: number;
-  };
-}
-let db: IDBPDatabase<money_test>;
-if (typeof window !== "undefined") {
-  db = await openDB<money_test>("money_test", 2, {
-    upgrade(newDB) {
-      newDB.deleteObjectStore("richness");
-      newDB.createObjectStore("richness");
-    },
-  });
-}
-
-async function saveMoney(money: number) {
-  await db.put("richness", money, "da_moni");
-  console.log(1);
-}
-
 export default function Index() {
   const [money, setMoney] = useAtom(moneyRW);
+  useAtomDevtools(moneyStore);
+
+  useEffect(() => {
+    (async () => {
+      const db = await getDB(1);
+      db.put("saves", { ...(await db.get("saves", "a save")), money });
+    })();
+  }, [money]);
 
   return (
     <>
@@ -41,13 +30,6 @@ export default function Index() {
       >
         <IconCurrencyDollar className="inline" />
         Click this button
-      </button>
-
-      <button
-        className="border-2 border-black block"
-        onClick={() => saveMoney(money)}
-      >
-        save <IconDeviceFloppy className="inline" />
       </button>
     </>
   );

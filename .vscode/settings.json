@@ -1,20 +1,22 @@
 {
   "files.associations": {
-    "*.css": "postcss"
+    // CSS files are not associated with PostCSS plugin by default
+    "*.css": "postcss",
+    // Highlight Python scripts
+    // Files are extensionless for conveince, ex. python scripts/run
+    "/scripts/*": "python"
   },
+  // Hide verbose items.
   "files.exclude": {
     "package/node_modules/": true,
-    "package/.next/": true,
-    "/build": true,
-    ".DS_Store": true,
-    "**/*.log": true,
-    ".env*.local": true,
-    "*.tsbuildinfo": true
+    "package/.next/": true
   },
+  // Add IntelliSense support for files
   "emmet.includeLanguages": {
     "postcss": "css",
     "typescriptreact": "javascriptreact"
   },
+  // Required for extension christian-kohler.path-intellisense
   "javascript.suggest.paths": false,
   "typescript.suggest.paths": false
 }

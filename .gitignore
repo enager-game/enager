@@ -3,7 +3,7 @@ package/.next/
 /build
 .DS_Store
 **/*.log
-.env*.local
+package/.env.local
 *.tsbuildinfo
 
 # UNUSED

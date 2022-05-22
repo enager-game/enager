@@ -3,8 +3,8 @@
     // CSS files are not associated with PostCSS plugin by default
     "*.css": "postcss",
     // Highlight Python scripts
-    // Files are extensionless for conveince, ex. python scripts/run
-    "/scripts/*": "python"
+    // See:
+    "/scripts/**/{[!.],[!.][!.],[!.][!.][!.],[!.][!.][!.][!.],[!.][!.][!.][!.][!.]}{[],[!.],[!.][!.][!.][!.][!.],[!.][!.][!.][!.][!.][!.][!.][!.][!.][!.]}{[],[!.],[!.][!.][!.][!.][!.][!.][!.][!.][!.][!.][!.][!.][!.][!.][!.]}": "python"
   },
   // Hide verbose items.
   "files.exclude": {

@@ -9,6 +9,7 @@ pip install plumbum
 python scripts/[script_name]
 
 # OR
+pip install
 chmod +x scripts/[script_name]
-scripts/[script_name]
+./scripts/[script_name]
 ```

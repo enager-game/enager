@@ -9,12 +9,10 @@ vscode:
     - mikestead.dotenv
 tasks:
   - name: Install Dependencies
-    init: |
-      npm install --prefix /workspace/enager/package
-      pip install plumbum
-      gp sync-done dep_installed
+    init: >
+      npm install --prefix /workspace/enager/package &&
+      gp sync-done install
   - name: Start Dev Server
-    init: |
-      gp sync-await dep_installed
-    command: |
-      python scripts/run
+    before: pip install plumbum
+    init: gp sync-await install
+    command: python scripts/run

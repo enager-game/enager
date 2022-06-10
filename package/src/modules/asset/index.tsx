@@ -3,5 +3,5 @@ export interface Props {
 }
 
 export default function Asset({ name }: Props) {
-  return <p className="border-black border-2 border-solid">{name}</p>;
+  return <span>{name}</span>;
 }

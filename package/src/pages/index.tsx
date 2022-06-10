@@ -10,5 +10,10 @@ export default function Index() {
 
   const data = useAtomValue(placeBoard);
 
-  return <Board className="border-2 border-black border-solid" data={data} />;
+  return (
+    <Board
+      className="border-2 border-black border-solid border-separate          "
+      data={data}
+    />
+  );
 }

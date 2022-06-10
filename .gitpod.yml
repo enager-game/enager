@@ -13,6 +13,5 @@ tasks:
       npm install --prefix /workspace/enager/package &&
       gp sync-done install
   - name: Start Dev Server
-    before: pip install plumbum
     init: gp sync-await install
-    command: python scripts/run
+    command: npm run dev --prefix /workspace/enager/package

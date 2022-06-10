@@ -12,7 +12,7 @@ export default function Board({ data, className }: Props) {
       {data.map((row, i) => (
         <tr key={i}>
           {row.map((tile, i) => (
-            <td key={i} className="space-x-4">
+            <td key={i} className="border-black border-2 border-solid">
               <Asset name={tile} />
             </td>
           ))}
